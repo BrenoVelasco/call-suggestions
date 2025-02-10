@@ -1,4 +1,4 @@
-type Category = {
+export type Category = {
   title: string;
   enabled: boolean;
   subCategories: Category[];
