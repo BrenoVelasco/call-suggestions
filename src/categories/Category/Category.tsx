@@ -4,7 +4,7 @@ import { Category as CategoryType } from "../categories"
 const Category: FC<CategoryType> = ({ title, subCategories, enabled }) => {
 
     return (
-        <div className="flex flex-col p-2">
+        <div className="flex flex-col p-2 border-radius border-1 border-solid border-gray-500">
             <div>{title}</div>
             <div>{enabled ? 'enabled': 'disabled'}</div>
             <div>{subCategories?.length}</div>
