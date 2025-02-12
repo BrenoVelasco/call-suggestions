@@ -1,25 +1,20 @@
 import { useState } from "react";
-
-import categories from "./categories";
+import categoriesData from "./categories";
 
 import { Suggestions } from "./Suggestions";
 import { SuggestionType } from "./types/SuggestionType";
 
 const SuggestionsContainer = () => {
-  const [categoriesList, setCategoriesList] = useState(categories);
+  const [categories, setCategories] = useState(categoriesData);
 
-  const updateCategoriesList = (before: SuggestionType, after: SuggestionType | null) => {
-    const index = categoriesList.findIndex((item) => {
-      item.title = before.title
-    });
+  const updateCategories = (newCategoryList: SuggestionType[]) => {
+    setCategories(newCategoryList);
 
-    // setCategoriesList({
-      
-    // })
+    // TODO: implement updating the category list to an API
   }
 
   return (
-    <Suggestions categories={categoriesList} updateCategoriesList={updateCategoriesList} />
+    <Suggestions categories={categories} updateParentCategories={updateCategories} />
   )
 }
 
