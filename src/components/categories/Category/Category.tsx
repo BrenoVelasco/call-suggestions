@@ -13,13 +13,16 @@ const Category: FC<CategoryType & {parentNode?: string}> = ({ title, subCategori
                 {title}
                 <button className="px-2 ml-auto cursor-pointer" onClick={() => removeCategory(title, parentNode)}>🗑️</button>
             </summary>
-            <div className="pl-10 py-2">
+            <div className="border-l-1 border-gray-300">
+
+            <div className=" pl-10 py-2">
                 {enabled && subCategories?.length ?
                         <List categories={subCategories} isSubCategory parentNode={title} />
                     : null
                 }
-                {enabled && <button className="p-4 rounded cursor-pointer" onClick={() => addCategory({title, subCategories, enabled}, title)}>➕</button>}
             </div>                    
+                {enabled && <button className="pt-4 rounded cursor-pointer" onClick={() => addCategory({title, subCategories, enabled}, title)}>➕</button>}
+            </div>
         </details> 
     )
 }
